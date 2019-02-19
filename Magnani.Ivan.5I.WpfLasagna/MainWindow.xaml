@@ -1,0 +1,27 @@
+﻿<Window x:Class="Magnani.Ivan._5I.WpfLasagna.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Magnani.Ivan._5I.WpfLasagna"
+        mc:Ignorable="d"
+        Title="Magnani Ivan Lasagna" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="125"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnLasagna" Grid.Row="0" Click="fnLasagna" FontSize="40" FontWeight="Bold" Background="Lime">Lasagna!!!</Button>
+        <ListView Grid.Row="1" x:Name="lswLasagna" IsMouseDirectlyOverChanged="LswLasagna_IsMouseDirectlyOverChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Width="750" Background="LightBlue">
+                        <TextBlock Text="{Binding nome}" FontWeight="Bold" FontSize="25"/>
+                        <TextBlock Text="{Binding peso}" FontWeight="Bold" />
+                        <TextBlock Text="{Binding urlImmagine}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>
